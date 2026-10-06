@@ -3,6 +3,9 @@
    category: "mobile" | "html5" | "playable"
    logo (optional): small square icon, shown for store games
    video (optional): opens the trailer popup
+   play (optional): URL of a web build (e.g. "games/my-game/index.html"
+     or an itch.io embed link), opens the game in a popup
+   orientation (optional): "landscape" (default) | "portrait"
    ========================================================= */
 const PROJECTS = [
   {
@@ -20,10 +23,11 @@ const PROJECTS = [
     link: { label: "Play game", url: "#" },
   },
   {
-    title: "Project 03",
+    title: "Hearts",
     category: "playable",
-    image: "assets/images/project-03.jpg",
-    link: { label: "Play demo", url: "#" },
+    image: "assets/images/hearts.jpg",
+    play: "games/hearts/index.html",
+    orientation: "portrait",
   },
 ];
 
@@ -145,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${escapeHtml(project.title)}</h3>
           </div>
           <div class="game-actions">
+            ${project.play ? `<button type="button" class="play-button" data-play="${escapeHtml(project.play)}" data-title="${escapeHtml(project.title)}" data-orientation="${project.orientation === "portrait" ? "portrait" : "landscape"}">Play now</button>` : ""}
             ${link.url ? `<a href="${escapeHtml(link.url)}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${escapeHtml(link.label || "View")} ${ARROW_ICON}</a>` : ""}
             ${project.video ? `<button type="button" data-video="${escapeHtml(project.video)}">Trailer</button>` : ""}
           </div>
@@ -240,5 +245,47 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeModal));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+  });
+
+  /* ---------- Game modal ---------- */
+  const gameModal = document.getElementById("gameModal");
+  const gameFrame = document.getElementById("gameFrame");
+  const gameTitle = document.getElementById("gameTitle");
+  const gameNewTab = document.getElementById("gameNewTab");
+  const gameFullscreen = document.getElementById("gameFullscreen");
+
+  const openGame = ({ play, title, orientation }) => {
+    gameTitle.textContent = title || "Game";
+    gameFrame.title = title || "Game";
+    gameNewTab.href = play;
+    gameModal.dataset.orientation = orientation || "landscape";
+    gameFrame.src = play;
+    gameModal.classList.add("open");
+    gameModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    gameFrame.focus();
+  };
+
+  const closeGame = () => {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    gameModal.classList.remove("open");
+    gameModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    // Unloading the iframe stops the game loop and its audio.
+    gameFrame.src = "about:blank";
+  };
+
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-play]");
+    if (trigger) openGame(trigger.dataset);
+  });
+  gameModal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeGame));
+  gameFullscreen.addEventListener("click", () => {
+    const stage = gameFrame.parentElement;
+    if (stage.requestFullscreen) stage.requestFullscreen().catch(() => window.open(gameNewTab.href, "_blank"));
+    else window.open(gameNewTab.href, "_blank");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && gameModal.classList.contains("open") && !document.fullscreenElement) closeGame();
   });
 });

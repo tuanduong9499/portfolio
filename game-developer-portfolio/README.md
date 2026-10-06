@@ -40,6 +40,7 @@ python -m http.server 8000
 - **Text / links**: edit `index.html` (email, GitHub, LinkedIn, itch.io).
 - **Images**: put files into `assets/images/` with the names above. Missing images show a placeholder.
 - **Trailer**: put `garden-rescue.mp4` into `assets/videos/`.
+- **Playable games**: copy a web build into `games/<name>/` and set `play: "games/<name>/index.html"` (or an itch.io embed URL) on the project, plus `orientation: "portrait"` for vertical games. A "Play now" button opens it in a popup. Test with a local server (e.g. Live Server or `npx serve`), not `file://`. For Unity WebGL on GitHub Pages, set Compression Format to Disabled or enable Decompression Fallback.
 - **CV**: put `Huynh-Tuan-Duong-CV.pdf` into `assets/cv/`.
 - **Colors**: change CSS variables at the top of `css/style.css`.
 
