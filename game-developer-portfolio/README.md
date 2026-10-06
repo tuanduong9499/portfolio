@@ -13,7 +13,7 @@ game-developer-portfolio/
 │   └── main.js
 ├── assets/
 │   ├── images/
-│   │   ├── profile.jpg
+│   │   ├── avata.jpg
 │   │   ├── garden-rescue.jpg
 │   │   ├── project-02.jpg
 │   │   └── project-03.jpg
@@ -36,12 +36,12 @@ python -m http.server 8000
 
 ## Customize
 
-- **Text / links**: edit `index.html` (email, GitHub, LinkedIn, itch.io, project descriptions).
+- **Projects**: edit the `PROJECTS` array at the top of `js/main.js` (title, category `mobile` / `html5` / `playable`, image, optional logo, link, optional trailer video). Tabs, counters and pagination update automatically.
+- **Text / links**: edit `index.html` (email, GitHub, LinkedIn, itch.io).
 - **Images**: put files into `assets/images/` with the names above. Missing images show a placeholder.
 - **Trailer**: put `garden-rescue.mp4` into `assets/videos/`.
 - **CV**: put `Huynh-Tuan-Duong-CV.pdf` into `assets/cv/`.
 - **Colors**: change CSS variables at the top of `css/style.css`.
-- **Typing roles**: edit the `roles` array in `js/main.js`.
 
 ## Deploy
 

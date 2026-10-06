@@ -4,207 +4,226 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Huynh Tuan Duong | Game Developer</title>
-  <meta name="description" content="Portfolio of Huynh Tuan Duong - Game Developer." />
+  <meta name="description" content="Portfolio of Huynh Tuan Duong - Game Developer from Da Nang, Viet Nam. Mobile games, HTML5 games and playable ads." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#home" class="nav__logo">HTD<span>.</span></a>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+<!--        <span class="shimmer-image brand-avatar" data-fallback="D"><img src="assets/images/avata.jpg" alt="" /></span>-->
+        <span class="brand-copy">
+          <strong>Duong Huynh</strong>
+        </span>
+      </a>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#formats">What I Make</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#projects">
+        View projects
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
       </button>
+    </div>
 
-      <ul class="nav__menu" id="navMenu">
-        <li><a href="#home" class="nav__link active">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#projects" class="nav__link">Projects</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <nav aria-label="Mobile navigation">
+        <a href="#formats">What I Make</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="gradient-button" href="#projects">
+          View projects
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container hero__inner">
-        <div class="hero__text reveal">
-          <p class="hero__greeting">&gt; Hello, world! I'm</p>
-          <h1 class="hero__name">Huynh Tuan Duong</h1>
-          <h2 class="hero__role">
-            <span class="typing" id="typing">Game Developer</span><span class="cursor">|</span>
-          </h2>
-          <p class="hero__desc">
-            I build fun, polished and playable experiences with Unity &amp; C#.
-            Passionate about gameplay programming, game feel and bringing ideas to life.
+    <section class="hero section-grid" id="top">
+      <div class="page-shell hero-layout">
+        <div class="hero-copy">
+          <p class="outlined-label"><span></span> Game Developer · Da Nang, Viet Nam</p>
+<!--          <h1>Duong Huynh<span class="title-slab">Duong</span></h1>-->
+          <div class="hero-pills" aria-label="Roles">
+            <span>Game Developer</span>
+            <span>Unity &amp; HTML5</span>
+            <span>Playable Ads</span>
+          </div>
+          <p class="hero-lead">
+            Hello! I am a Game Developer passionate about transforming creative ideas into engaging, interactive experiences. I specialize in designing gameplay systems, building clean and well-structured code architectures, and crafting smooth, enjoyable player experiences.
+
+            I can develop fully polished games that meet specific client requirements or bring new game concepts to life based on current market trends.
+
           </p>
-          <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">View Projects</a>
-            <a href="assets/cv/Huynh-Tuan-Duong-CV.pdf" class="btn btn--outline" download>Download CV</a>
+          <div class="hero-actions">
+            <a class="gradient-button" href="#projects">
+              Explore projects
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a class="outline-button" href="#contact">Contact me</a>
           </div>
+          <dl class="catalog-summary">
+            <div><dt data-count-of="all">00</dt><dd>Projects</dd></div>
+            <div><dt data-count-of="mobile">00</dt><dd>Mobile Games</dd></div>
+            <div><dt data-count-of="html5">00</dt><dd>HTML5 Games</dd></div>
+            <div><dt data-count-of="playable">00</dt><dd>Playable Ads</dd></div>
+          </dl>
         </div>
 
-        <div class="hero__image reveal">
-          <div class="avatar">
-            <img src="assets/images/profile.jpg" alt="Huynh Tuan Duong" data-fallback="HTD" />
-          </div>
-        </div>
-      </div>
-      <a href="#about" class="scroll-down" aria-label="Scroll down"><span></span></a>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section__title reveal"><span>01.</span> About Me</h2>
-        <div class="about reveal">
-          <div class="about__text">
-            <p>
-              Hi! I'm <strong>Huynh Tuan Duong</strong>, a game developer who loves turning
-              creative ideas into interactive worlds. I focus on gameplay systems, clean
-              architecture and smooth player experience.
-            </p>
-            <p>
-              I enjoy every stage of game development: prototyping mechanics, writing tools,
-              optimizing performance and polishing the small details that make a game feel great.
-            </p>
-            <ul class="about__facts">
-              <li><span>Location</span> Vietnam</li>
-              <li><span>Focus</span> Gameplay Programming</li>
-              <li><span>Engine</span> Unity</li>
-              <li><span>Language</span> C#</li>
-            </ul>
-          </div>
-          <div class="about__stats">
-            <div class="stat"><strong data-count="3">0</strong><span>Projects</span></div>
-            <div class="stat"><strong data-count="2">0</strong><span>Years Coding</span></div>
-            <div class="stat"><strong data-count="5">0</strong><span>Game Jams</span></div>
-          </div>
-        </div>
+        <a class="hero-feature" href="#projects">
+          <span class="feature-badge">Open to work</span>
+          <span class="shimmer-image" data-fallback="HTD"><img src="assets/images/avata.jpg" alt="Huynh Tuan Duong" /></span>
+          <span class="feature-copy">
+            <small>Game Developer</small>
+            <strong>Huynh Tuan Duong</strong>
+            <span>View projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+          </span>
+        </a>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section section--alt" id="projects">
-      <div class="container">
-        <h2 class="section__title reveal"><span>02.</span> Projects</h2>
+    <!-- Formats -->
+    <section class="formats section-grid" id="formats">
+      <div class="page-shell">
+        <div class="section-heading reveal">
+          <p class="outlined-label"><span></span> What I make</p>
+          <h2>Three formats.<br /><span>One playful portfolio.</span></h2>
+          <p>Published mobile games, instant-play HTML5 games and interactive playable ads, all in one place.</p>
+        </div>
 
-        <!-- Featured project -->
-        <article class="featured reveal">
-          <div class="featured__media">
-            <img src="assets/images/garden-rescue.jpg" alt="Garden Rescue screenshot" data-fallback="Garden Rescue" />
-            <button class="play-btn" data-video="assets/videos/garden-rescue.mp4" aria-label="Play trailer">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+        <div class="format-timeline">
+          <article class="format-row reveal">
+            <button class="format-card" type="button" data-select="mobile">
+              <span class="format-art">
+                <span class="shimmer-image" data-fallback="Mobile Games"><img src="assets/images/garden-rescue.jpg" alt="Mobile game screenshot" loading="lazy" /></span>
+                <small><b data-count-of="mobile">00</b> titles</small>
+              </span>
+              <span class="format-copy">
+                <small>Format 01</small>
+                <strong>Mobile Games</strong>
+                <span>Casual and puzzle games built with Unity and published for iOS and Android.</span>
+                <b>View projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></b>
+              </span>
             </button>
-          </div>
-          <div class="featured__info">
-            <p class="featured__label">Featured Project</p>
-            <h3 class="featured__title">Garden Rescue</h3>
-            <p class="featured__desc">
-              A casual action game where players defend their garden from waves of pests.
-              Plant, upgrade and protect your crops using strategy and quick reflexes.
-            </p>
-            <ul class="tags">
-              <li>Unity</li><li>C#</li><li>2D</li><li>Mobile</li>
-            </ul>
-            <div class="featured__links">
-              <button class="btn btn--primary btn--sm" data-video="assets/videos/garden-rescue.mp4">Watch Trailer</button>
-              <a href="#" class="btn btn--outline btn--sm" target="_blank" rel="noopener">Play / Source</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Other projects -->
-        <div class="projects">
-          <article class="card reveal">
-            <div class="card__media">
-              <img src="assets/images/project-02.jpg" alt="Project 02 screenshot" data-fallback="Project 02" />
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Project 02</h3>
-              <p class="card__desc">Short description of your second game: genre, core mechanic and your role.</p>
-              <ul class="tags"><li>Unity</li><li>C#</li><li>3D</li></ul>
-              <a href="#" class="card__link" target="_blank" rel="noopener">View project &rarr;</a>
-            </div>
+            <span class="timeline-number" aria-hidden="true">01</span>
           </article>
 
-          <article class="card reveal">
-            <div class="card__media">
-              <img src="assets/images/project-03.jpg" alt="Project 03 screenshot" data-fallback="Project 03" />
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Project 03</h3>
-              <p class="card__desc">Short description of your third game: genre, core mechanic and your role.</p>
-              <ul class="tags"><li>Unity</li><li>C#</li><li>Game Jam</li></ul>
-              <a href="#" class="card__link" target="_blank" rel="noopener">View project &rarr;</a>
-            </div>
+          <article class="format-row reveal">
+            <button class="format-card" type="button" data-select="html5">
+              <span class="format-art">
+                <span class="shimmer-image" data-fallback="HTML5 Games"><img src="assets/images/project-02.jpg" alt="HTML5 game screenshot" loading="lazy" /></span>
+                <small><b data-count-of="html5">00</b> titles</small>
+              </span>
+              <span class="format-copy">
+                <small>Format 02</small>
+                <strong>HTML5 Games</strong>
+                <span>Complete browser games that launch instantly across desktop and mobile screens.</span>
+                <b>View projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></b>
+              </span>
+            </button>
+            <span class="timeline-number" aria-hidden="true">02</span>
+          </article>
+
+          <article class="format-row reveal">
+            <button class="format-card" type="button" data-select="playable">
+              <span class="format-art">
+                <span class="shimmer-image" data-fallback="Playable Ads"><img src="assets/images/project-03.jpg" alt="Playable ad screenshot" loading="lazy" /></span>
+                <small><b data-count-of="playable">00</b> titles</small>
+              </span>
+              <span class="format-copy">
+                <small>Format 03</small>
+                <strong>Playable Ads</strong>
+                <span>Short interactive experiences that communicate a game idea through play.</span>
+                <b>View projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></b>
+              </span>
+            </button>
+            <span class="timeline-number" aria-hidden="true">03</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <div class="container">
-        <h2 class="section__title reveal"><span>03.</span> Skills</h2>
-        <div class="skills">
-          <div class="skill-group reveal">
-            <h3>Programming</h3>
-            <div class="skill"><span>C#</span><div class="bar"><div class="bar__fill" data-level="85"></div></div></div>
-            <div class="skill"><span>C++</span><div class="bar"><div class="bar__fill" data-level="60"></div></div></div>
-            <div class="skill"><span>JavaScript</span><div class="bar"><div class="bar__fill" data-level="55"></div></div></div>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Game Dev</h3>
-            <div class="skill"><span>Unity</span><div class="bar"><div class="bar__fill" data-level="85"></div></div></div>
-            <div class="skill"><span>Gameplay Systems</span><div class="bar"><div class="bar__fill" data-level="80"></div></div></div>
-            <div class="skill"><span>UI / UX</span><div class="bar"><div class="bar__fill" data-level="65"></div></div></div>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Tools</h3>
-            <ul class="tools">
-              <li>Git</li><li>Visual Studio</li><li>Rider</li><li>Blender</li>
-              <li>Photoshop</li><li>Aseprite</li><li>Trello</li><li>Jira</li>
-            </ul>
-          </div>
+    <!-- Projects catalog (cards are rendered from PROJECTS in js/main.js) -->
+    <section class="catalog section-grid" id="projects">
+      <div class="page-shell">
+        <div class="section-heading compact reveal">
+          <p class="outlined-label"><span></span> Projects</p>
+          <h2>Built, published,<br /><span>ready to play.</span></h2>
+          <p>Select a format to explore my games and demos.</p>
         </div>
+
+        <div class="catalog-tabs" role="tablist" aria-label="Project categories">
+          <button type="button" role="tab" data-filter="all" aria-selected="true">All <span data-count-of="all">00</span></button>
+          <button type="button" role="tab" data-filter="mobile" aria-selected="false">Mobile Games <span data-count-of="mobile">00</span></button>
+          <button type="button" role="tab" data-filter="html5" aria-selected="false">HTML5 Games <span data-count-of="html5">00</span></button>
+          <button type="button" role="tab" data-filter="playable" aria-selected="false">Playable Ads <span data-count-of="playable">00</span></button>
+        </div>
+
+        <div role="tabpanel" aria-live="polite">
+          <div class="game-grid" id="gameGrid"></div>
+          <p class="catalog-empty" id="catalogEmpty" hidden>No projects in this category yet. Coming soon!</p>
+        </div>
+
+        <nav class="catalog-pagination" id="pagination" aria-label="Project pages" hidden></nav>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section section--alt" id="contact">
-      <div class="container contact reveal">
-        <h2 class="section__title section__title--center"><span>04.</span> Get In Touch</h2>
-        <p class="contact__text">
-          I'm currently open to new opportunities. Whether you have a question, a project idea
-          or just want to say hi, my inbox is always open!
-        </p>
-        <a href="mailto:your.email@example.com" class="btn btn--primary">Say Hello</a>
-        <ul class="socials">
-          <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-          <li><a href="mailto:your.email@example.com">Email</a></li>
-        </ul>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Huynh Tuan Duong. Built with HTML, CSS &amp; JS.</p>
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="page-shell footer-card">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="shimmer-image brand-avatar" data-fallback="D"><img src="assets/images/avata.jpg" alt="" /></span>
+          <span class="brand-copy">
+            <strong>Duong Huynh</strong>
+            <small>Game Developer</small>
+          </span>
+        </a>
+        <p>Mobile games, HTML5 games and playable ads built with Unity and web technologies.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <a href="#formats">What I Make</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <div>
+        <strong>Connect</strong>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://itch.io/" target="_blank" rel="noopener">itch.io</a>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <a href="mailto:your.email@example.com">Email me</a>
+        <span>Da Nang, Viet Nam</span>
+      </div>
+      <p class="copyright">© <span id="year"></span> Huynh Tuan Duong</p>
+    </div>
   </footer>
 
   <!-- Video modal -->
   <div class="modal" id="videoModal" aria-hidden="true">
     <div class="modal__backdrop" data-close></div>
     <div class="modal__content">
-      <button class="modal__close" data-close aria-label="Close">&times;</button>
+      <button class="modal__close" type="button" data-close aria-label="Close">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
       <video id="modalVideo" controls playsinline></video>
     </div>
   </div>
