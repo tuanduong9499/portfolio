@@ -817,8 +817,8 @@ button:focus-visible {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
   align-items: stretch;
 }
 
@@ -831,17 +831,17 @@ button:focus-visible {
   height: 100%;
   overflow: hidden;
   flex-direction: column;
-  border: 2px solid var(--ink);
-  border-radius: 22px;
+  border: 2.5px solid var(--ink);
+  border-radius: 28px;
   background: var(--paper);
-  box-shadow: 0 5px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
   transition: transform 0.19s ease, box-shadow 0.19s ease;
   animation: card-in 0.4s ease backwards;
 }
 
 .game-card:hover {
-  box-shadow: 0 3px 0 var(--ink);
-  transform: translateY(3px);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: translate(4px, 4px);
 }
 
 @keyframes card-in {
@@ -854,15 +854,15 @@ button:focus-visible {
   aspect-ratio: 16 / 10;
   margin: 14px 14px 0;
   border: 2px solid var(--ink);
-  border-radius: 14px;
+  border-radius: 18px;
 }
 
 .game-card-body {
   display: grid;
   flex: 1;
   grid-template-rows: 1fr auto;
-  gap: 18px;
-  padding: 20px;
+  gap: 22px;
+  padding: 24px 20px 20px;
 }
 
 .game-card-body > div {
@@ -934,16 +934,12 @@ button:focus-visible {
 }
 
 .game-actions .play-button {
-  background: var(--gradient);
+  flex: 1 1 100%;
+  min-height: 44px;
+  background: var(--primary);
+  box-shadow: 0 4px 0 var(--ink);
   color: #fff;
-}
-
-.game-actions .play-button::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-block: 5px solid transparent;
-  border-left: 8px solid currentColor;
+  font-size: 0.7rem;
 }
 
 .game-actions a:hover,
@@ -1308,7 +1304,7 @@ button:focus-visible {
   .catalog-pagination { margin-top: 40px; }
   .pagination-pages { display: none; }
   .pagination-status { display: block; }
-  .game-card { border-radius: 20px; }
+  .game-card { border-radius: 22px; box-shadow: 6px 6px 0 var(--ink); }
   .game-cover { aspect-ratio: 16 / 9; }
   .site-footer { padding-top: 55px; }
   .footer-card { grid-template-columns: 1fr; gap: 34px; padding: 30px 24px; border-radius: 22px; box-shadow: 0 4px 0 var(--ink); }

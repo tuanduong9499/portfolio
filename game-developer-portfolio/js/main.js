@@ -25,35 +25,70 @@ const PROJECTS = [
   {
     title: "Hearts",
     category: "playable",
-    image: "assets/images/hearts.jpg",
+    image: "games/Playables/hearts/hearts.png",
     play: "games/Playables/hearts/index.html",
+    orientation: "portrait",
+  },
+  {
+    title: "Arrow Escape 3D",
+    category: "playable",
+    image: "games/Playables/Arrow3D/arrow-escape-3D.png",
+    play: "games/Playables/Arrow3D/index.html",
+    orientation: "portrait",
+  },
+  {
+    title: "Drop Marbles",
+    category: "playable",
+    image: "games/Playables/DropMarbles/drop-marbles.png",
+    play: "games/Playables/DropMarbles/index.html",
+    orientation: "portrait",
+  },
+  {
+    title: "Find The Queens",
+    category: "playable",
+    image: "games/Playables/FindTheQueens/find-the-queens.png",
+    play: "games/Playables/FindTheQueens/index.html",
+    orientation: "portrait",
+  },
+  {
+    title: "Food Sort",
+    category: "playable",
+    image: "games/Playables/FoodSort/food-sort-v2.png",
+    play: "games/Playables/FoodSort/index.html",
+    orientation: "portrait",
+  },
+  {
+    title: "Jigsaw",
+    category: "playable",
+    image: "games/Playables/Jigsaw/jig-merge.png",
+    play: "games/Playables/Jigsaw/jigsaw01.html",
     orientation: "portrait",
   },
   {
     title: "Loving Colors",
     category: "playable",
-    image: "assets/images/loving-colors.jpg",
+    image: "games/Playables/LovingColors/loving-colors.png",
     play: "games/Playables/LovingColors/index.html",
     orientation: "portrait",
   },
   {
     title: "Patches",
     category: "playable",
-    image: "assets/images/patches.jpg",
+    image: "games/Playables/Patches/patches.png",
     play: "games/Playables/Patches/index.html",
     orientation: "portrait",
   },
   {
-    title: "Solitaire",
+    title: "Solitaire Family",
     category: "playable",
-    image: "assets/images/solitaire.jpg",
+    image: "games/Playables/Solitaire/solitaire-family.png",
     play: "games/Playables/Solitaire/index.html",
     orientation: "portrait",
   },
   {
     title: "Zip",
     category: "playable",
-    image: "assets/images/zip.jpg",
+    image: "games/Playables/Zip/zip.png",
     play: "games/Playables/Zip/index.html",
     orientation: "portrait",
   },
@@ -69,6 +104,8 @@ const PAGE_SIZE = 12;
 
 const ARROW_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>';
+const EXTERNAL_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>';
 const PREV_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>';
 const NEXT_ICON =
@@ -177,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${escapeHtml(project.title)}</h3>
           </div>
           <div class="game-actions">
-            ${project.play ? `<button type="button" class="play-button" data-play="${escapeHtml(project.play)}" data-title="${escapeHtml(project.title)}" data-orientation="${project.orientation === "portrait" ? "portrait" : "landscape"}">Play now</button>` : ""}
+            ${project.play ? `<button type="button" class="play-button" data-play="${escapeHtml(project.play)}" data-title="${escapeHtml(project.title)}" data-orientation="${project.orientation === "portrait" ? "portrait" : "landscape"}">Play demo ${EXTERNAL_ICON}</button>` : ""}
             ${link.url ? `<a href="${escapeHtml(link.url)}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${escapeHtml(link.label || "View")} ${ARROW_ICON}</a>` : ""}
             ${project.video ? `<button type="button" data-video="${escapeHtml(project.video)}">Trailer</button>` : ""}
           </div>
