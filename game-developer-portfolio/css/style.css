@@ -887,7 +887,8 @@ button:focus-visible {
 }
 
 .game-card.has-logo .game-card-body {
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 72px 1fr;
+  column-gap: 18px;
   align-items: center;
 }
 
@@ -896,10 +897,10 @@ button:focus-visible {
 }
 
 .game-logo {
-  width: 48px;
-  height: 48px;
+  width: 72px;
+  height: 72px;
   border: 2px solid var(--ink);
-  border-radius: 10px;
+  border-radius: 16px;
 }
 
 .game-actions {
@@ -933,8 +934,9 @@ button:focus-visible {
   color: var(--ink);
 }
 
+.game-actions a,
 .game-actions .play-button {
-  flex: 1 1 100%;
+  flex: 1 1 auto;
   min-height: 44px;
   background: var(--primary);
   box-shadow: 0 4px 0 var(--ink);

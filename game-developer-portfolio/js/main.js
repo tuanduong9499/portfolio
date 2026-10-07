@@ -9,6 +9,13 @@
    ========================================================= */
 const PROJECTS = [
   {
+    title: "Hangry Rush",
+    category: "mobile",
+    image: "games/Moblie/HangryRush/background.png",
+    logo: "games/Moblie/HangryRush/logo-hangry.png",
+    link: { label: "Store listing", url: "https://apps.apple.com/us/app/hangry-rush/id6805801269" },
+  },
+  {
     title: "Garden Rescue: Tap Out Defense",
     category: "mobile",
     image: "assets/images/garden-rescue.jpg",
@@ -106,6 +113,8 @@ const ARROW_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>';
 const EXTERNAL_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" /></svg>';
+const NEW_TAB_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6" /></svg>';
 const PREV_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>';
 const NEXT_ICON =
@@ -215,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="game-actions">
             ${project.play ? `<button type="button" class="play-button" data-play="${escapeHtml(project.play)}" data-title="${escapeHtml(project.title)}" data-orientation="${project.orientation === "portrait" ? "portrait" : "landscape"}">Play demo ${EXTERNAL_ICON}</button>` : ""}
-            ${link.url ? `<a href="${escapeHtml(link.url)}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${escapeHtml(link.label || "View")} ${ARROW_ICON}</a>` : ""}
+            ${link.url ? `<a href="${escapeHtml(link.url)}"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${escapeHtml(link.label || "View")} ${isExternal ? NEW_TAB_ICON : ARROW_ICON}</a>` : ""}
             ${project.video ? `<button type="button" data-video="${escapeHtml(project.video)}">Trailer</button>` : ""}
           </div>
         </div>
